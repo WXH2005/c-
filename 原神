@@ -1,0 +1,173 @@
+早 2023/10/18 20:44:02
+#include<stdio.h>
+int main()
+{
+    int n,i,sex;
+    double a;
+    scanf("%d\n",&n);
+    for(i = 0;i <= n;i++){
+        scanf("%c %f",&sex,&a);
+        switch(sex){
+            case 'F':
+                printf("%.2f\n",a * 1.09);
+                break;
+            case 'M':
+                printf("%.2f\n",a / 1.09);
+                    break;
+        }
+    }
+    return 0;
+}
+
+点动 2023/10/18 20:48:27
+没换行
+
+该用户通过“423”群向你发起临时会话，前往设置。
+
+点动 2023/10/18 20:48:54
+for里面的
+
+点动 2023/10/24 23:03:52
+#include<stdio.h>
+int main()
+{
+      int N,s,t,a,i=0;
+      scanf("%d",&N);
+      while(i<N)
+
+      {
+              scanf("%d %d %d",&a,&s,&t);
+              if(a==1)
+              {
+                        if(s<130) printf("duo chi yu! ");
+                        if(s==130) printf("wan mei! ");
+                        if(s>130) printf("ni li hai! ");
+                        if(t<27) printf("duo chi rou!\n");
+                        if(t==27) printf("wan mei!\n");
+                        if(t>27) printf("shao chi rou!\n");
+              }
+              if(a==0)
+              {
+                        if(s<129) printf("duo chi yu! ");
+                        if(s==129) printf("wan mei! ");
+                        if(s>129) printf("ni li hai! ");
+                        if(t<25) printf("duo chi rou!\n");
+                        if(t==25) printf("wan mei!\n");
+                        if(t>25) printf("shao chi rou!\n");
+              }
+              i++;
+      }
+      return 0;
+}
+
+点动 2023/11/1 17:02:00
+
+
+沈子凯 2023/12/3 14:39:12
+Reporter: Excuse me, sir, do you live in this village?
+
+Villager: Yes, I do. What can I do for you?
+
+Reporter: I'm a reporter from the local news station, and I wanted to talk to the residents about the recent improvements in the village's infrastructure. Can you tell me more about the source of the drinking water here?
+
+Villager: Absolutely! We are fortunate to have a clean and reliable source of drinking water in our village. The water comes from a natural spring located on the outskirts of the village. It has been tested and certified to meet all the health and safety standards. This ensures that we have access to clean and safe water, which is essential for maintaining perfect people's health.
+
+Reporter: That's great to hear! Having access to clean drinking water is crucial for the well-being of the community. Can you elaborate on how this has improved the lives of the villagers?
+
+Villager: Certainly! Before the implementation of this water source, we relied on wells and other unreliable sources. Many villagers suffered from waterborne diseases due to contamination and lack of proper sanitation. However, with this new source of drinking water, the incidence of such diseases has significantly decreased. Our children are healthier, and the overall well-being of the community has improved. This development has been a game-changer for us.
+
+Reporter: That's truly remarkable. It's evident that the availability of clean drinking water has had a positive impact on the health of the villagers. Are there any other recent developments or initiatives that have improved the overall quality of life in the village?
+
+Villager: Absolutely! Apart from the water source, we have seen significant improvements in our infrastructure. The village roads have been repaired, making transportation easier and safer for everyone. Additionally, we have established a community center that provides various educational and recreational activities for both children and adults. This center has not only fostered a sense of community spirit but has also contributed to the overall well-being and growth of our village.
+
+Reporter: It's truly inspiring to see how these developments have transformed the lives of the villagers. Thank you for sharing your insights with us. Is there anything else you would like to add?
+
+Villager: Just that we are grateful for the efforts and investment made by the local government in improving our village. These initiatives have brought about positive changes and have given us hope for a better future. We are determined to continue working together as a community to further enhance our living conditions and strive for a brighter tomorrow.
+
+Reporter: Thank you once again for your time and valuable input. Your enthusiasm and dedication to your village are truly commendable. We wish you all the best in your future endeavors.
+
+Villager: Thank you, and please feel free to visit our village anytime to witness the progress firsthand.
+
+早 2023/12/3 14:59:27
+
+
+对方已成功接收了你发送的离线文件“英语小组作业12.3.pptx”(1.41MB)。
+
+沈子凯 11:54:01
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+// 检查JSON格式是否正确
+int checkJSONFormat(const char* jsonString) {
+    // 实现JSON格式检查逻辑
+    // 返回错误位置或0表示格式正确
+}
+
+// 树状缩进显示JSON字符串
+void printIndentedJSON(const char* jsonString, int indentLevel) {
+    // 实现树状缩进显示逻辑
+}
+
+// 树状缩进保存JSON字符串到文件
+void saveIndentedJSONToFile(const char* jsonString, int indentLevel, const char* filename) {
+    // 实现树状缩进保存到文件逻辑
+}
+
+// 保存压缩格式的JSON字符串到文件
+void saveCompressedJSONToFile(const char* jsonString, const char* filename) {
+    // 实现压缩保存到文件逻辑
+}
+
+int main() {
+    char filename[100];
+    printf("请输入JSON文本文件的路径文件名：");
+    scanf("%s", filename);
+
+    // 打开文件并读取内容
+    FILE* file = fopen(filename, "r");
+    if (file == NULL) {
+        printf("无法打开文件：%s\n", filename);
+        return 1;
+    }
+
+    fseek(file, 0, SEEK_END);
+    long size = ftell(file);
+    rewind(file);
+
+    char* jsonString = (char*)malloc(size + 1);
+    fread(jsonString, sizeof(char), size, file);
+    jsonString[size] = '\0';
+
+    fclose(file);
+
+    // 检查JSON格式是否正确
+    int errorPosition = checkJSONFormat(jsonString);
+    if (errorPosition != 0) {
+        printf("文件内容格式错误，第%d个字符\n", errorPosition);
+        free(jsonString);
+        return 1;
+    }
+
+    // 树状缩进显示JSON字符串
+    printf("JSON字符串如下：\n");
+    printIndentedJSON(jsonString, 0);
+
+    // 将JSON字符串保存为树状缩进格式的文件
+    char outputFilename[100];
+    printf("请输入保存树状缩进格式JSON的文件名：");
+    scanf("%s", outputFilename);
+    saveIndentedJSONToFile(jsonString, 0, outputFilename);
+    printf("保存成功！\n");
+
+    // 将JSON字符串保存为压缩格式的文件
+    char compressedOutputFilename[100];
+    printf("请输入保存压缩格式JSON的文件名：");
+    scanf("%s", compressedOutputFilename);
+    saveCompressedJSONToFile(jsonString, compressedOutputFilename);
+    printf("保存成功！\n");
+
+    free(jsonString);
+    return 0;
+}
+
